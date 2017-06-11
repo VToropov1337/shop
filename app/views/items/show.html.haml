@@ -1,3 +1,8 @@
-%h1= @item.name
-%h1= @item.description
-%h1= @item.price
+.div.col-md-12
+  %p= @item.name
+  %p= @item.description
+  %p= @item.price
+
+= link_to "Back", root_path, class: "btn btn-sm btn-default"
+= link_to "Edit",edit_item_path, class: "btn btn-sm btn-default"
+= link_to "Delete", item_path, method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-sm btn-default"

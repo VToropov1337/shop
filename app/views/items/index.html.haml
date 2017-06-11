@@ -1,3 +1,6 @@
-.div.col-md-12
+.table-striped
 - @items.each do |item|
-	%h2= link_to item.name, item
+	%tr= link_to item.name, item
+
+
+=link_to "New bid", new_item_path
