@@ -1,6 +1,8 @@
-.table-striped
+.nav.class.navbar.navbar-default
+	.div.class.container-fluid
+		.div.class.navbar-header
+			%h2=link_to "New bid", new_item_path
+
+
 - @items.each do |item|
-	%tr= link_to item.name, item
-
-
-=link_to "New bid", new_item_path
+	%h2= link_to item.name, item

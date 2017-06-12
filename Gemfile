@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'simple_form', '~> 3.5'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'haml', '~> 5.0', '>= 5.0.1'
+gem 'paperclip', '~> 5.1'
 
 
 # Use Capistrano for deployment

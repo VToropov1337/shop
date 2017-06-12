@@ -1,8 +1,12 @@
-.div.col-md-12
-  %p= @item.name
-  %p= @item.description
-  %p= @item.price
 
-= link_to "Back", root_path, class: "btn btn-sm btn-default"
-= link_to "Edit",edit_item_path, class: "btn btn-sm btn-default"
-= link_to "Delete", item_path, method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-sm btn-default"
+%h1= @item.name
+%h2= @item.description
+%p= @item.price
+euro
+%br
+%br
+%br
+.btn-group
+  = link_to "Back", root_path, class: "btn btn-sm btn-default"
+  = link_to "Edit",edit_item_path, class: "btn btn-sm btn-default"
+  = link_to "Delete", item_path, method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-sm btn-default"
