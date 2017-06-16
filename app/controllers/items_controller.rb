@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :find_items, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.all
+    @items = Item.all.order("created_at DESC")
   end
 
   def show
