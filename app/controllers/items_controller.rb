@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :find_post, only: [:create, :update, :edit, :destroy]
+  before_action :find_items, only: [:show, :edit, :update, :destroy]
 
   def index
     @items = Item.all
@@ -20,6 +20,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
   end
 
   def update
@@ -38,7 +39,7 @@ class ItemsController < ApplicationController
 
   private
 
-  def find_post
+  def find_items
     @item = Item.find(params[:id])
   end
 
