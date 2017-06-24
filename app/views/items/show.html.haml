@@ -2,8 +2,10 @@
 %h1= @item.name
 %h2= @item.description
 %p= @item.price
-= image_tag @item.image.url(:medium)
 euro
+%%br
+
+= image_tag @item.image.url(:medium)
 %br
 %br
 %br

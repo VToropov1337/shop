@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :find_items, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @items = Item.all.order("created_at DESC")
@@ -10,22 +11,27 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
+    #@item = Item.new
+    @item = current_user.items.build
+
   end
 
   def create
-    @item = Item.new(item_params)
-    @item.save
-    redirect_to @item
+    @item = current_user.items.build(item_params)
+    if @item.save
+      redirect_to @item, notice: "Successfully created new Bid"
+    else
+      render 'new'
+    end
   end
 
   def edit
-    @item = Item.find(params[:id])
+  #  @item = Item.find(params[:id])
   end
 
   def update
     if  @item.update(item_params)
-        redirect_to @item
+        redirect_to @item, notice: "Bid was successfully updated!"
     else
       render 'edit'
     end
