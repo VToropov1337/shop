@@ -1,10 +1,5 @@
-.nav.class.navbar.navbar-default
-	.div.class.container-fluid
-		.div.class.navbar-header
-			%h2=link_to "New bid", new_item_path
-
-
 .row
 - @items.each do |item|
-	.div.col-md-2
+	.div.col-md-12
 		%h2= link_to item.name, item
+		= image_tag item.image.url(:medium)

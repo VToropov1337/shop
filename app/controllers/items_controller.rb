@@ -7,11 +7,9 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def new
-    #@item = Item.new
     @item = current_user.items.build
 
   end
@@ -26,7 +24,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-  #  @item = Item.find(params[:id])
   end
 
   def update
@@ -40,7 +37,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-      redirect root_path
+      redirect_to root_path
   end
 
   private
@@ -51,6 +48,6 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :description, :price, :image)
-
   end
+
 end
