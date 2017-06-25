@@ -13,6 +13,20 @@
  *= require_tree .
  *= require_self
  */
- @import 'normalize.css';
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+ @import 'normalize.css';
+
+ body {
+
+ 	background: rgb(0,0,0);
+ }
+
+a {
+  font-family: 'Holtwood One SC';
+
+
+}

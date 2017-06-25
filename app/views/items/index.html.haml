@@ -1,5 +1,5 @@
 .row
 - @items.each do |item|
-	.div.col-md-12
-		%h2= link_to item.name, item
-		= image_tag item.image.url(:medium)
+	.div.col-xs-6
+		%h3= link_to item.name, item
+		= image_tag item.image.url(:medium), class: "img-circle"
